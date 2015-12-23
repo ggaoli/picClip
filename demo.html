@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <title>pic-upload-clip</title>
+    <link  href="style/layout-pc.css" rel="stylesheet" type="text/css" />
+    <link  href="style/themes-pc.css" rel="stylesheet" type="text/css" />
+    <!--图片截图上传样式文件-->
+    <link  href="style/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
+    <link  href="style/pic-clip.css" rel="stylesheet" type="text/css" />
+
+    <script src="javascript/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="javascript/reveal-model.js"></script>
+</head>
+
+<body>
+<div class="white-bg"> <br/>
+    <br/>
+    <br/>
+    <div class="row ">
+        <div class="large-1 columns" style="font-size: 14px; color: #999">上传海报：</div>
+        <div class="more-preview-pic">
+            <div class="large-6 columns small-12">
+                <div class="crop crop1" id="crop1">
+                    <div class="crop-img click-block" reveal-model-id="pic-clip1"><img src="images/default.png"  alt=""/></div>
+                </div>
+            </div>
+            <div class="large-5 columns small-12">
+                <div class="clearfix"> <a href="javascript:void(0);" reveal-model-id="pic-clip1" class="click-block uploader-bn button"><i class="fa fa-upload"></i>上传</a> </div>
+                <div class="nor-method">
+                    <p>
+                        温馨提醒： <br/>
+                        可以点击上传或者图片窗口选择图片和参考海报！
+                    </p>
+
+                    <p>一张漂亮的海报，能让你的活动锦上添花，带来更多用户报名
+                        及增加传播效果，也将影响该活动被推广的几率！</p>
+                </div>
+            </div>
+        </div>
+        <div class="normal-preview-pic" style="display: none">
+            <div class="large-6 columns">
+                <div class="evaluate-uploaders">
+                    <div id="fileList1" class="uploader-list">
+                        <div class="no-bullet" id="sortable-list1">
+                            <div class="uploader uploaded"> <span class="bg-preview"> <img src="images/default.png" alt=""/> </span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="large-5 columns small-12">
+                <div class="clearfix"> <a href="javascript:void(0);"  id="filePicker1" class="left" >上传</a> </div>
+                <div class="nor-method">
+                    <p>一张漂亮的海报，能让你的活动锦上添花，带来更多用户报名
+                        及增加传播效果，也将影响该活动被推荐的几率！</p>
+                </div>
+                <div class="nor-method">
+
+                    <p class="color-red">
+                        温馨提醒：<br/>
+                        由于浏览器版本过低，现采用普通方式上传图片，如需采用更多上传方式，请升级浏览器。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" row-upload" >
+        <div class="box-content" id="pic-clip1">
+            <h2>海报设置<a href="#" class="close-reveal-modal">×</a></h2>
+            <!--tab切换-->
+            <div class="tab-rec-1">
+                <div class="tab clearfix no-margin">
+                    <ul class="clearfix" id="datatable_pic">
+                        <li class="on"> <a href="#" target="_blank">本地上传</a> </li>
+                        <li> <a href="#" target="_blank">海报参考</a> </li>
+                    </ul>
+                </div>
+                <div class="modcon clearfix ">
+                    <div id="post_dttab_con_1" class="clearfix">
+                        <div class="modPic" id="modPic">
+                            <input type="hidden" name="act" id="act" value="uploadAndCutImg">
+                            <input type="hidden" id="x" name="x">
+                            <input type="hidden" id="y" name="y">
+                            <input type="hidden" id="w" name="w">
+                            <input type="hidden" id="h" name="h">
+                            <input name="caseId" id="caseId" value="00000015" type="hidden">
+                            <input name="appId" value="00000001" type="hidden">
+                            <div class="uploader-area " id="filePicker">点击选择图片</div>
+                            <span>只支持JPG、PNG、GIF，大小不超过2M</span> <span class="up-span-pic"></span>
+                            <p>可将图片拖至这里</p>
+                            <div class="uploader-list" id="fileList"></div>
+                        </div>
+                        <div class="btn-grop clearfix"> <a class="reveal-button right sure clip-success-btn close-reveal-modal" style="display:none;" >确定</a> <a class="reveal-button close-reveal-modal right margin-r10" aria-label="Close">取消</a> <a class="" id="filePicker2" style="display:none;">重新上传</a> </div>
+                    </div>
+                    <div id="post_dttab_con_2" style="display:none;">
+                        <div class="picture-select-box">
+                            <ul class="clearfix">
+                                <li><img src="images/poster/a1_preview.jpg" real-src="images/poster/a1.jpg" alt="创业"/><span>创业</span><i></i></li>
+                                <li><img src="images/poster/a2_preview.jpg" real-src="images/poster/a2.jpg" alt="校园"/><span>校园</span><i></i></li>
+                                <li><img src="images/poster/a3_preview.jpg" real-src="images/poster/a3.jpg" alt="电影"/><span>电影</span><i></i></li>
+                                <li><img src="images/poster/a4_preview.jpg" real-src="images/poster/a4.jpg" alt="公益"/><span>公益</span><i></i></li>
+                                <li><img src="images/poster/a5_preview.jpg" real-src="images/poster/a5.jpg" alt="科技"/><span>科技</span><i></i></li>
+                                <li><img src="images/poster/a6_preview.jpg" real-src="images/poster/a6.jpg" alt="课程"/><span>课程</span><i></i></li>
+                                <li><img src="images/poster/a7_preview.jpg" real-src="images/poster/a7.jpg" alt="亲子"/><span>亲子</span><i></i></li>
+                                <li><img src="images/poster/a8_preview.jpg" real-src="images/poster/a8.jpg" alt="商务"/><span>商务</span><i></i></li>
+                                <li><img src="images/poster/a9_preview.jpg" real-src="images/poster/a9.jpg" alt="社交"/><span>社交</span><i></i></li>
+                                <li><img src="images/poster/a10_preview.jpg" real-src="images/poster/a10.jpg" alt="生活"/><span>生活</span><i></i></li>
+                                <li><img src="images/poster/a11_preview.jpg" real-src="images/poster/a11.jpg" alt="文化"/><span>文化</span><i></i></li>
+                                <li><img src="images/poster/a12_preview.jpg" real-src="images/poster/a12.jpg" alt="音乐"/><span>音乐</span><i></i></li>
+                                <li><img src="images/poster/a13_preview.jpg" real-src="images/poster/a13.jpg" alt="娱乐"/><span>娱乐</span><i></i></li>
+                                <li><img src="images/poster/a14_preview.jpg" real-src="images/poster/a14.jpg" alt="运动"/><span>运动</span><i></i></li>
+                            </ul>
+                        </div>
+                        <div class="btn-grop clearfix"> <a class="reveal-button right sure select-success-btn close-reveal-modal" style="display:none;">确定</a> <a class="reveal-button close-reveal-modal right margin-r10" aria-label="Close">取消</a> </div>
+                    </div>
+                    <!--<div id="data_dttab_con_3" style="display: none;">-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+
+<!--头像、图片上传插件JS文件-->
+<script type="text/javascript" src="javascript/webuploader.js"></script>
+<script  src="javascript/jquery.Jcrop.js" type="text/javascript" charset="utf8"></script>
+<script  src="javascript/mod-Picture.js" type="text/javascript" charset="utf8"></script>
+<script src="javascript/tab.exam.js" type="text/javascript" charset="utf8"></script>
+
+
+
+<script>
+
+
+
+</script>
+</body>
+</html>
