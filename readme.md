@@ -3,6 +3,7 @@
 
 - **webUploader：**[http://fex.baidu.com/webuploader/][1]
 - **jQuery Jcrop：**[http://deepliquid.com/content/Jcrop.html][2]
+
 ##兼容性
 - ie6+
 - ALL
